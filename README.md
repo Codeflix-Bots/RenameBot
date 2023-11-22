@@ -9,7 +9,7 @@
 ![github card](https://github-readme-stats.vercel.app/api/pin/?username=thekunalsingh143&repo=ILLEGAL-RENAME-BOT&theme=dark)
 
 
-### Sᴀᴍᴩʟᴇ Bᴏᴛ (Official Pyro Rename Bot)
+### Sᴀᴍᴩʟᴇ Bᴏᴛ (Official Illegal Rename Bot)
 
 <p align="center">
 🤖 <a href="https://t.me/IllegalRename_Bot"><img title="Telegram" src="https://img.shields.io/static/v1?label=ILLEGAL+RENAME&message=BOT&color=blue-green"></a> 🤖
