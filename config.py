@@ -26,19 +26,19 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID    = os.environ.get("API_ID", "")
-    API_HASH  = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
+    API_ID    = os.environ.get("API_ID", "21655449")
+    API_HASH  = os.environ.get("API_HASH", "112be9974e163f6dbd645ce4b94f4e6a")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6030107694:AAGOMdLVKFq4ztqcd7EcGjgwPEWcSlIt904") 
    
     # database config
-    DB_NAME = os.environ.get("DB_NAME","pyro-botz")     
-    DB_URL  = os.environ.get("DB_URL","")
+    DB_NAME = os.environ.get("DB_NAME","Cluster0")     
+    DB_URL  = os.environ.get("DB_URL","mongodb+srv://TheKunalSiingh:851130Nkt@atlascluster.dwwvie3.mongodb.net/?retryWrites=true&w=majority")
  
     # other configs
     BOT_UPTIME  = time.time()
-    START_PIC   = os.environ.get("START_PIC", "")
-    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]
-    FORCE_SUB   = os.environ.get("FORCE_SUB", "") 
+    START_PIC   = os.environ.get("START_PIC", "https://telegra.ph/file/3bbdf92a95ec15f515440.png")
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '1229852181').split()]
+    FORCE_SUB   = os.environ.get("FORCE_SUB", "-1001848348787") 
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", None))
 
     # wes response configuration     
@@ -49,11 +49,11 @@ class Config(object):
 class Txt(object):
     # part of text configuration
     START_TXT = """<b>Hᴀɪ {} 👋,
-Tʜɪs Is Aɴ Aᴅᴠᴀɴᴄᴇᴅ Aɴᴅ Yᴇᴛ Pᴏᴡᴇʀꜰᴜʟ Rᴇɴᴀᴍᴇ Bᴏᴛ
+Tʜɪs Is Aɴ Aᴅᴠᴀɴᴄᴇᴅ Aɴᴅ Yᴇᴛ Pᴏᴡᴇʀꜰᴜʟ ɪʟʟᴇɢᴀʟ Rᴇɴᴀᴍᴇ Bᴏᴛ
 Usɪɴɢ Tʜɪs Bᴏᴛ Yᴏᴜ Cᴀɴ Rᴇɴᴀᴍᴇ & Cʜᴀɴɢᴇ Tʜᴜᴍʙɴᴀɪʟ Oꜰ Yᴏᴜʀ Fɪʟᴇ
 Yᴏᴜ Cᴀɴ Aʟsᴏ Cᴏɴᴠᴇʀᴛ Vɪᴅᴇᴏ Tᴏ Fɪʟᴇ & Fɪʟᴇ Tᴏ Vɪᴅᴇᴏ
 Tʜɪs Bᴏᴛ Aʟꜱᴏ Sᴜᴘᴘᴏʀᴛs Cᴜsᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ Aɴᴅ Cᴜsᴛᴏᴍ Cᴀᴘᴛɪᴏɴ
-Tʜɪs Bᴏᴛ Wᴀs Cʀᴇᴀᴛᴇᴅ Bʏ : @Pyro_Botz 💞</b>"""
+Tʜɪs Bᴏᴛ Wᴀs Cʀᴇᴀᴛᴇᴅ Bʏ : @Illegal_Developer 💞</b>"""
 
     ABOUT_TXT = """<b>╭───────────⍟
 ├🤖 ᴍy ɴᴀᴍᴇ : {}
@@ -85,14 +85,14 @@ Exᴀᴍᴩʟᴇ:- /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 
 #⚠️ Dᴏɴ'ᴛ Rᴇᴍᴏᴠᴇ Oᴜʀ Cʀᴇᴅɪᴛꜱ @ᴩyʀᴏ_ʙᴏᴛᴢ🙏🥲
     DEV_TXT = """<b><u>Sᴩᴇᴄɪᴀʟ Tʜᴀɴᴋꜱ & Dᴇᴠᴇʟᴏᴩᴇʀꜱ</b></u>
-» 𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : <a href=https://github.com/IllegalDevelopers/Illegal-Rename-Bot>𝐏𝐘𝐑𝐎 𝐑𝐄𝐍𝐀𝐌𝐄 𝐁𝐎𝐓</a>
-» 𝗛𝗢𝗪 𝗧𝗢 𝗗𝗘𝗣𝗟𝗢𝗬 : <a href=https://youtu.be/com>MᴏTᴇᴄʜ Yᴛ</a>
-• ❣️ <a href=https://github.com/IllegalDevelopers/Illegal-Rename-Bot>𝗟𝗡 𝗧𝗘𝗖𝗛𝗡𝗜𝗖</a>
-• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗠𝗵𝗱_𝗿𝘇𝗻</a>
-• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗠𝗼𝗧𝗲𝗰𝗵 𝗬𝗧</a>
-• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗠𝗿.𝗠𝗞𝗡 𝗧𝗚</a>
-• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗚𝗶𝘁𝗛𝘂𝗯 𝗡𝗢𝗢𝗕</a>
-• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗝𝗲𝗼𝗹 𝗣𝗮𝘂𝗹</a> """
+» 𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : <a href=https://github.com/IllegalDevelopers/Illegal-Rename-Bot>𝐈𝐋𝐋𝐄𝐆𝐀𝐋 𝐑𝐄𝐍𝐀𝐌𝐄 𝐁𝐎𝐓</a>
+» 𝗛𝗢𝗪 𝗧𝗢 𝗗𝗘𝗣𝗟𝗢𝗬 : <a href=https://youtu.be/com>Illegal Yᴛ</a>
+• ❣️ <a href=https://github.com/IllegalDevelopers/Illegal-Rename-Bot>𝗜𝗹𝗹𝗲𝗴𝗮𝗹 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿</a>
+• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗜𝗹𝗹𝗲𝗴𝗮𝗹 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿</a>
+• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗞𝗮𝘆𝗱𝗲𝗻 𝗬𝗧</a>
+• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗠𝗿.𝗞𝗮𝘆𝗱𝗲𝗻 𝗧𝗚</a>
+• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗚𝗶𝘁𝗛𝘂𝗯 𝗞𝗮𝘆𝗱𝗲𝗻</a>
+• ❣️ <a href=https://t.me/IllegalDeveloperBot>𝗞𝘂𝗻𝗮𝗹 𝗦𝗶𝗻𝗴𝗵</a> """
 
     PROGRESS_BAR = """<b>\n
 ╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣
