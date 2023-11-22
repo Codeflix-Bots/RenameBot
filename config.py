@@ -44,21 +44,10 @@ class Config(object):
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", "True"))
 
-# Part of Day --------------------
-currentTime = datetime.datetime.now()
-
-if currentTime.hour < 12:
-    wish = "❤️ Good morning sweetheart ❤️"
-elif 12 <= currentTime.hour < 12:
-    wish = '🤍 Good afternoon my Love 🤍'
-else:
-    wish = '🦋 Good evening baby 🦋'
-
-# -------------------------------
 
 class Txt(object):
     # part of text configuration
-    START_TXT = """<b>Hᴀɪ {} 👋, {wish}
+    START_TXT = """<b>Hᴀɪ {} 👋,
     
 ➻ Tʜɪs Is Aɴ Aᴅᴠᴀɴᴄᴇᴅ Aɴᴅ Yᴇᴛ Pᴏᴡᴇʀꜰᴜʟ ɪʟʟᴇɢᴀʟ Rᴇɴᴀᴍᴇ Bᴏᴛ.
 ➻ Usɪɴɢ Tʜɪs Bᴏᴛ Yᴏᴜ Cᴀɴ Rᴇɴᴀᴍᴇ & Cʜᴀɴɢᴇ Tʜᴜᴍʙɴᴀɪʟ Oꜰ Yᴏᴜʀ Fɪʟᴇ.
