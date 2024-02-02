@@ -12,7 +12,8 @@ from helper.database import db
 from asyncio import sleep
 from PIL import Image
 import os, time
-
+from config import Config
+LOG_CHANNEL_ID = Config.LOG_CHANNEL
 
 @Client.on_message(filters.private & (filters.document | filters.audio | filters.video))
 async def rename_start(client, message):
@@ -76,7 +77,16 @@ async def doc(bot, update):
     new_filename = new_name.split(":-")[1]
     file_path = f"downloads/{new_filename}"
     file = update.message.reply_to_message
-
+    if file.document:
+        file_name = file.document.file_name
+    elif file.video:
+        file_name = file.video.file_name
+    elif files.audio:
+        file_name = file.audio.file_name
+    
+    caption = f"**File Name:** `{file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
+    await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption) ok 
+ 
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
     try:
      	path = await bot.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram,progress_args=("Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))                    
@@ -86,6 +96,7 @@ async def doc(bot, update):
     duration = 0
     try:
         metadata = extractMetadata(createParser(file_path))
+        audio
         if metadata.has("duration"):
            duration = metadata.get('duration').seconds
     except:
@@ -113,20 +124,23 @@ async def doc(bot, update):
          img = Image.open(ph_path)
          img.resize((320, 320))
          img.save(ph_path, "JPEG")
-
+ 
     await ms.edit("Tʀyɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....")
     type = update.data.split("_")[1]
     try:
         if type == "document":
-            await bot.send_document(
+            file = await bot.send_document(
                 update.message.chat.id,
                 document=file_path,
                 thumb=ph_path, 
                 caption=caption, 
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
+            caption = f"**File Name:** `{file.document.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
+            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
+ 
         elif type == "video": 
-            await bot.send_video(
+            file = await bot.send_video(
 		update.message.chat.id,
 	        video=file_path,
 	        caption=caption,
@@ -134,8 +148,11 @@ async def doc(bot, update):
 		duration=duration,
 	        progress=progress_for_pyrogram,
 		progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
+	    caption = f"**File Name:** `{file.video.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
+            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
+ 
         elif type == "audio": 
-            await bot.send_audio(
+            file = await bot.send_audio(
 		update.message.chat.id,
 		audio=file_path,
 		caption=caption,
@@ -143,12 +160,16 @@ async def doc(bot, update):
 		duration=duration,
 	        progress=progress_for_pyrogram,
 	        progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
+	    caption = f"**File Name:** `{file.audio.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
+            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
+ 
     except Exception as e:          
         os.remove(file_path)
         if ph_path:
             os.remove(ph_path)
         return await ms.edit(f" Eʀʀᴏʀ {e}")
- 
+	    
+    
     await ms.delete() 
     os.remove(file_path) 
     if ph_path: os.remove(ph_path) 
