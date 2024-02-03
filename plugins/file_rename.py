@@ -20,26 +20,24 @@ async def rename_start(client, message):
     file = getattr(message, message.media.value)
     filename = file.file_name  
     if file.file_size > 2000 * 1024 * 1024:
-         return await message.reply_text("Sᴏʀʀy Bʀᴏ Tʜɪꜱ Bᴏᴛ Iꜱ Dᴏᴇꜱɴ'ᴛ Sᴜᴩᴩᴏʀᴛ Uᴩʟᴏᴀᴅɪɴɢ Fɪʟᴇꜱ Bɪɢɢᴇʀ Tʜᴀɴ 2Gʙ")
+        return await message.reply_text("Sᴏʀʀy Bʀᴏ Tʜɪꜱ Bᴏᴛ Iꜱ Dᴏᴇꜱɴ'ᴛ Sᴜᴩᴩᴏʀᴛ Uᴩʟᴏᴀᴅɪɴɢ Fɪʟᴇꜱ Bɪɢɢᴇʀ Tʜᴀɴ 2Gʙ")
 
     try:
         await message.reply_text(
             text=f"**__Pʟᴇᴀꜱᴇ Eɴᴛᴇʀ Nᴇᴡ Fɪʟᴇɴᴀᴍᴇ...__**\n\n**Oʟᴅ Fɪʟᴇ Nᴀᴍᴇ** :- `{filename}`",
-	    reply_to_message_id=message.id,  
-	    reply_markup=ForceReply(True)
+            reply_to_message_id=message.id,  
+            reply_markup=ForceReply(True)
         )       
         await sleep(30)
     except FloodWait as e:
         await sleep(e.value)
         await message.reply_text(
             text=f"**__Pʟᴇᴀꜱᴇ Eɴᴛᴇʀ Nᴇᴡ Fɪʟᴇɴᴀᴍᴇ...__**\n\n**Oʟᴅ Fɪʟᴇ Nᴀᴍᴇ** :- `{filename}`",
-	    reply_to_message_id=message.id,  
-	    reply_markup=ForceReply(True)
+            reply_to_message_id=message.id,  
+            reply_markup=ForceReply(True)
         )
     except:
         pass
-
-
 
 @Client.on_message(filters.private & filters.reply)
 async def refunc(client, message):
@@ -64,12 +62,10 @@ async def refunc(client, message):
         elif file.media == MessageMediaType.AUDIO:
             button.append([InlineKeyboardButton("🎵 Aᴜᴅɪᴏ", callback_data = "upload_audio")])
         await message.reply(
-            text=f"**Sᴇʟᴇᴄᴛ Tʜᴇ Oᴜᴛᴩᴜᴛ Fɪʟᴇ Tyᴩᴇ**\n**• Fɪʟᴇ Nᴀᴍᴇ :-**`{new_name}`",
+            text=f"**Sᴇʟᴇᴄᴛ Tʜᴇ Oᴜᴛᴜᴛ Fɪʟᴇ Tyᴩᴇ**\n**• Fɪʟᴇ Nᴀᴍᴇ :-**`{new_name}`",
             reply_to_message_id=file.id,
             reply_markup=InlineKeyboardMarkup(button)
         )
-
-
 
 @Client.on_callback_query(filters.regex("upload"))
 async def doc(bot, update):    
@@ -84,21 +80,21 @@ async def doc(bot, update):
     elif files.audio:
         file_name = file.audio.file_name
     
-    caption = f"**File Name:** `{file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-    await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
+    text = f"**File Name:** `{file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
+    await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
     try:
-     	path = await bot.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram,progress_args=("Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))                    
+        path = await bot.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram,progress_args=("Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))                    
     except Exception as e:
-     	return await ms.edit(e)
-     	     
+        return await ms.edit(e)
+             
     duration = 0
     try:
         metadata = extractMetadata(createParser(file_path))
         audio
         if metadata.has("duration"):
-           duration = metadata.get('duration').seconds
+            duration = metadata.get('duration').seconds
     except:
         pass
     ph_path = None
@@ -108,22 +104,22 @@ async def doc(bot, update):
     c_thumb = await db.get_thumbnail(update.message.chat.id)
 
     if c_caption:
-         try:
-             caption = c_caption.format(filename=new_filename, filesize=humanbytes(media.file_size), duration=convert(duration))
-         except Exception as e:
-             return await ms.edit(text=f"Yᴏᴜʀ Cᴀᴩᴛɪᴏɴ Eʀʀᴏʀ Exᴄᴇᴩᴛ Kᴇyᴡᴏʀᴅ Aʀɢᴜᴍᴇɴᴛ ●> ({e})")             
+        try:
+            caption = c_caption.format(filename=new_filename, filesize=humanbytes(media.file_size), duration=convert(duration))
+        except Exception as e:
+            return await ms.edit(text=f"Yᴏᴜʀ Cᴀᴩᴛɪᴏɴ Eʀʀᴏʀ Exᴄᴇᴩᴛ Kᴇyᴡᴏʀᴅ Aʀɢᴜᴍᴇɴᴛ ●> ({e})")             
     else:
-         caption = f"**{new_filename}**"
+        caption = f"**{new_filename}**"
  
     if (media.thumbs or c_thumb):
-         if c_thumb:
-             ph_path = await bot.download_media(c_thumb) 
-         else:
-             ph_path = await bot.download_media(media.thumbs[0].file_id)
-         Image.open(ph_path).convert("RGB").save(ph_path)
-         img = Image.open(ph_path)
-         img.resize((320, 320))
-         img.save(ph_path, "JPEG")
+        if c_thumb:
+            ph_path = await bot.download_media(c_thumb) 
+        else:
+            ph_path = await bot.download_media(media.thumbs[0].file_id)
+        Image.open(ph_path).convert("RGB").save(ph_path)
+        img = Image.open(ph_path)
+        img.resize((320, 320))
+        img.save(ph_path, "JPEG")
  
     await ms.edit("Tʀyɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....")
     type = update.data.split("_")[1]
@@ -137,44 +133,39 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
             caption = f"**File Name:** `{file.document.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
+            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
         elif type == "video": 
             file = await bot.send_video(
-		update.message.chat.id,
-	        video=file_path,
-	        caption=caption,
-		thumb=ph_path,
-		duration=duration,
-	        progress=progress_for_pyrogram,
-		progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-	    caption = f"**File Name:** `{file.video.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
+                update.message.chat.id,
+                video=file_path,
+                caption=caption,
+                thumb=ph_path,
+                duration=duration,
+                progress=progress_for_pyrogram,
+                progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
+            caption = f"**File Name:** `{file.video.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
+            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
         elif type == "audio": 
             file = await bot.send_audio(
-		update.message.chat.id,
-		audio=file_path,
-		caption=caption,
-		thumb=ph_path,
-		duration=duration,
-	        progress=progress_for_pyrogram,
-	        progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-	    caption = f"**File Name:** `{file.audio.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
+                update.message.chat.id,
+                audio=file_path,
+                caption=caption,
+                thumb=ph_path,
+                duration=duration,
+                progress=progress_for_pyrogram,
+                progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
+            caption = f"**File Name:** `{file.audio.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
+            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
     except Exception as e:          
         os.remove(file_path)
         if ph_path:
             os.remove(ph_path)
         return await ms.edit(f" Eʀʀᴏʀ {e}")
-	    
+    
     
     await ms.delete() 
     os.remove(file_path) 
-    if ph_path: os.remove(ph_path) 
-
-
-
-
-
+    if ph_path: os.remove(ph_path)
