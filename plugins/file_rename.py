@@ -85,7 +85,7 @@ async def doc(bot, update):
         file_name = file.audio.file_name
     
     caption = f"**File Name:** `{file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-    await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption) ok 
+    await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=caption)
  
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
     try:
