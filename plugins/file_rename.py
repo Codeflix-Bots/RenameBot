@@ -90,10 +90,9 @@ async def doc(bot, update):
         return await ms.edit(e)
              
     duration = 0
-    try:
-        metadata = extractMetadata(createParser(file_path))
-        audio
-        if metadata.has("duration"):
+    try:        
+        metadata = extractMetadata(createParser(file_path)) 
+        if metadata.has("duration"):             
             duration = metadata.get('duration').seconds
     except:
         pass
@@ -125,19 +124,19 @@ async def doc(bot, update):
     type = update.data.split("_")[1]
     try:
         if type == "document":
-            file = await bot.send_document(
+            filez = await bot.send_document(
                 update.message.chat.id,
                 document=file_path,
                 thumb=ph_path, 
                 caption=caption, 
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{file.document.file_name}`\n**User:** {update.from_user.mention} ({update.message.from_user.id})"
-            kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
+            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{filez.document.file_name}`\n**User:** {file.from_user.mention} ({file.from_user.id})"
+            kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, filez.id)
             await bot.send_message(LOG_CHANNEL_ID, text)
  
         elif type == "video": 
-            file = await bot.send_video(
+            filez = await bot.send_video(
                 update.message.chat.id,
                 video=file_path,
                 caption=caption,
@@ -145,12 +144,12 @@ async def doc(bot, update):
                 duration=duration,
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{file.video.file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
-            kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
+            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{filez.video.file_name}`\n**User:** {file.from_user.mention} ({file.from_user.id})"
+            kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, filez.id)
             await bot.send_message(LOG_CHANNEL_ID, text)
             
         elif type == "audio": 
-            file = await bot.send_audio(
+            filez = await bot.send_audio(
                 update.message.chat.id,
                 audio=file_path,
                 caption=caption,
@@ -158,8 +157,8 @@ async def doc(bot, update):
                 duration=duration,
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{file.audio.file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
-            kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
+            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{filez.audio.file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
+            kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, filez.id)
             await bot.send_message(LOG_CHANNEL_ID, text)
     except Exception as e:          
         os.remove(file_path)
