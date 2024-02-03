@@ -81,7 +81,7 @@ async def doc(bot, update):
         file_name = file.audio.file_name
     
     text = f"**File Name:** `{file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-    await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
+    await bot.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
     try:
@@ -133,7 +133,7 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
             caption = f"**File Name:** `{file.document.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
+            await bot.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
         elif type == "video": 
             file = await bot.send_video(
@@ -145,7 +145,7 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
             caption = f"**File Name:** `{file.video.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
+            await bot.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
         elif type == "audio": 
             file = await bot.send_audio(
@@ -157,7 +157,7 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
             caption = f"**File Name:** `{file.audio.file_name}`\n**User:** {update.from_user.mention} ({update.from_user.id})"
-            await client.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
+            await bot.forward_messages(LOG_CHANNEL_ID, update.chat.id, file.id, caption=text)
  
     except Exception as e:          
         os.remove(file_path)
