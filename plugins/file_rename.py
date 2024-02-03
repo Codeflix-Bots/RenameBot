@@ -17,7 +17,7 @@ LOG_CHANNEL_ID = Config.LOG_CHANNEL
 
 @Client.on_message(filters.private & (filters.document | filters.audio | filters.video))
 async def rename_start(client, message):
-    if await db.get_ban_status(message.from_user.id):        
+    if not await db.get_ban_status(message.from_user.id):        
         return await client.send_message(message.from_user.id, text="Sᴏʀʀy Yᴏᴜ'ʀᴇ Bᴀɴɴᴇᴅ Tᴏ Uꜱᴇ Mᴇ")  
         
     file = getattr(message, message.media.value)
