@@ -80,7 +80,7 @@ async def doc(bot, update):
     elif files.audio:
         file_name = file.audio.file_name
     
-    text = f"☝️☝️☝️This files details \n\n**File Name:** `{file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
+    text = f"☝️☝️☝️This files details \n\n**File Name:** `{file_name}`\n**User:** {file.from_user.mention} ({file.from_user.id})"
     Kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
     await bot.send_message(LOG_CHANNEL_ID, text)
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
