@@ -81,7 +81,7 @@ async def doc(bot, update):
         file_name = file.audio.file_name
     
     text = f"**File Name:** `{file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
-    await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id, caption=text)
+    await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
  
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
     try:
@@ -133,7 +133,7 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
             caption = f"**File Name:** `{file.document.file_name}`\n**User:** {update.from_user.mention} ({update.message.from_user.id})"
-            await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id, caption=text)
+            await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
  
         elif type == "video": 
             file = await bot.send_video(
@@ -145,7 +145,7 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
             caption = f"**File Name:** `{file.video.file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
-            await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id, caption=text)
+            await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
  
         elif type == "audio": 
             file = await bot.send_audio(
@@ -157,7 +157,7 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
             caption = f"**File Name:** `{file.audio.file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
-            await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id, caption=text)
+            await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
  
     except Exception as e:          
         os.remove(file_path)
