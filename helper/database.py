@@ -54,8 +54,11 @@ class Database:
             is_banned=False,
             ban_reason=''
         )
-        user = await self.col.find_one({'id':int(id)})        
-        return user.get('ban_status', default)
+        user = await  self.is_user_exist({'id':int(id)})        
+        if user:            
+            return user.get('ban_status', default)
+        else:
+            return default
         
     async def delete_user(self, user_id):
         await self.col.delete_many({'_id': int(user_id)})
