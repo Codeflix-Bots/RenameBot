@@ -100,7 +100,7 @@ async def send_msg(user_id, message):
  
 @Client.on_message(filters.command('ban') & filters.user(Config.ADMIN))
 async def ban_a_user(bot, message):
-        if len(message.command) == 1:
+    if len(message.command) == 1:
         return await message.reply('Give me a user id / username')
     r = message.text.split(None)
     if len(r) > 2:
