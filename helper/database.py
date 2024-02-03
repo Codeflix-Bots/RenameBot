@@ -54,7 +54,7 @@ class Database:
             is_banned=False,
             ban_reason=''
         )
-        user = await  self.is_user_exist({'id':int(id)})        
+        user = await self.col.find_one({'_id': int(id)})        
         if user:            
             return user.get('ban_status', default)
         else:
