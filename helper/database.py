@@ -40,14 +40,14 @@ class Database:
             is_banned=False,
             ban_reason=''
         )
-        await self.col.update_one({'id': id}, {'$set': {'ban_status': ban_status}})
+        await self.col.update_one({'_id': id}, {'$set': {'ban_status': ban_status}})
     
     async def ban_user(self, user_id, ban_reason="No Reason"):
         ban_status = dict(
             is_banned=True,
             ban_reason=ban_reason
         )
-        await self.col.update_one({'id': user_id}, {'$set': {'ban_status': ban_status}})
+        await self.col.update_one({'_id': user_id}, {'$set': {'ban_status': ban_status}})
 
     async def get_ban_status(self, id):
         default = dict(
