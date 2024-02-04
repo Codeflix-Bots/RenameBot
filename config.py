@@ -28,11 +28,11 @@ class Config(object):
     # pyro client config
     API_ID    = os.environ.get("API_ID", "21655449")
     API_HASH  = os.environ.get("API_HASH", "112be9974e163f6dbd645ce4b94f4e6a")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6030107694:AAGJyL8zfevzrqDCvewGMREPQ1G1C3ICPcY") 
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6782811930:AAFDqkELEVJeGGlTbI5tavrac7RfZ7-Qzw4") 
    
     # database config
     DB_NAME = os.environ.get("DB_NAME","Cluster0")     
-    DB_URL  = os.environ.get("DB_URL","mongodb+srv://TheKunalSiingh:851130Nkt@atlascluster.dwwvie3.mongodb.net/?retryWrites=true&w=majority")
+    DB_URL  = os.environ.get("DB_URL","mongodb+srv://xhkwxgqt:Hz3qmBzGxfDoTnjP@cluster0.ggfljdt.mongodb.net/?retryWrites=true&w=majority")
  
     # other configs
     BOT_UPTIME  = time.time()
