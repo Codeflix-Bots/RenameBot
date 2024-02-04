@@ -66,7 +66,7 @@ async def refunc(client, message):
         elif file.media == MessageMediaType.AUDIO:
             button.append([InlineKeyboardButton("🎵 Aᴜᴅɪᴏ", callback_data = "upload_audio")])
         await message.reply(
-            text=f"**Sᴇʟᴇᴄᴛ Tʜᴇ Oᴜᴛᴜᴛ Fɪʟᴇ Tyᴩᴇ**\n**• Fɪʟᴇ Nᴀᴍᴇ :-**`{new_name}`",
+            text=f"**Sᴇʟᴇᴄᴛ Tʜᴇ Oᴜᴛᴜᴛ Fɪʟᴇ Tyᴩᴇ**\n\n**• Fɪʟᴇ Nᴀᴍᴇ :-**`{new_name}`",
             reply_to_message_id=file.id,
             reply_markup=InlineKeyboardMarkup(button)
         )
@@ -84,7 +84,7 @@ async def doc(bot, update):
     elif files.audio:
         file_name = file.audio.file_name
     
-    text = f"☝️☝️☝️This files details \n\n**File Name:** `{file_name}`\n**User:** {file.from_user.mention} ({file.from_user.id})"
+    text = f"☝️☝️☝️ **This Files Details** \n\n**File Name:** `{file_name}`\n\n**User:** {file.from_user.mention} ({file.from_user.id})"
     Kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, file.id)
     await bot.send_message(LOG_CHANNEL_ID, text)
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
@@ -135,7 +135,7 @@ async def doc(bot, update):
                 caption=caption, 
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{filez.document.file_name}`\n**User:** {file.from_user.mention} ({file.from_user.id})"
+            text = f"☝️☝️☝️ This Files Details\n\n**File Name:** `{filez.document.file_name}`\n\n**User:** {file.from_user.mention} ({file.from_user.id})"
             kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, filez.id)
             await bot.send_message(LOG_CHANNEL_ID, text)
  
@@ -148,7 +148,7 @@ async def doc(bot, update):
                 duration=duration,
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{filez.video.file_name}`\n**User:** {file.from_user.mention} ({file.from_user.id})"
+            text = f"☝️☝️☝️ This Files Details\n\n**File Name:** `{filez.video.file_name}`\n\n**User:** {file.from_user.mention} ({file.from_user.id})"
             kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, filez.id)
             await bot.send_message(LOG_CHANNEL_ID, text)
             
@@ -161,7 +161,7 @@ async def doc(bot, update):
                 duration=duration,
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-            text = f"☝️☝️☝️ This files details\n\n**File Name:** `{filez.audio.file_name}`\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
+            text = f"☝️☝️☝️ This Files Details\n\n**File Name:** `{filez.audio.file_name}`\n\n**User:** {update.message.from_user.mention} ({update.message.from_user.id})"
             kk = await bot.forward_messages(LOG_CHANNEL_ID, update.message.chat.id, filez.id)
             await bot.send_message(LOG_CHANNEL_ID, text)
     except Exception as e:          
