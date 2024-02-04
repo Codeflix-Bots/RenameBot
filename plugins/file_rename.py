@@ -60,11 +60,11 @@ async def refunc(client, message):
             new_name = new_name + "." + extn
         await reply_message.delete()
 
-        button = [[InlineKeyboardButton("📁 Dᴏᴄᴜᴍᴇɴᴛ",callback_data = "upload_document")]]
+        button = [[InlineKeyboardButton("📁 ʀᴇɴᴀᴍᴇ ᴀꜱ Dᴏᴄᴜᴍᴇɴᴛ",callback_data = "upload_document")]]
         if file.media in [MessageMediaType.VIDEO, MessageMediaType.DOCUMENT]:
-            button.append([InlineKeyboardButton("🎥 Vɪᴅᴇᴏ", callback_data = "upload_video")])
+            button.append([InlineKeyboardButton("🎥 ʀᴇɴᴀᴍᴇ ᴀꜱ Vɪᴅᴇᴏ", callback_data = "upload_video")])
         elif file.media == MessageMediaType.AUDIO:
-            button.append([InlineKeyboardButton("🎵 Aᴜᴅɪᴏ", callback_data = "upload_audio")])
+            button.append([InlineKeyboardButton("🎵 ʀᴇɴᴀᴍᴇ ᴀꜱ Aᴜᴅɪᴏ", callback_data = "upload_audio")])
         await message.reply(
             text=f"**Sᴇʟᴇᴄᴛ Tʜᴇ Oᴜᴛᴜᴛ Fɪʟᴇ Tyᴩᴇ**\n\n**• Fɪʟᴇ Nᴀᴍᴇ :-**`{new_name}`",
             reply_to_message_id=file.id,
@@ -89,7 +89,7 @@ async def doc(bot, update):
     await bot.send_message(LOG_CHANNEL_ID, text)
     ms = await update.message.edit("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ....")    
     try:
-        path = await bot.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram,progress_args=("Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))                    
+        path = await bot.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram,progress_args=("**ღ♡ ꜰɪʟᴇ ᴜɴᴅᴇʀ ᴄᴏɴꜱᴛʀᴜᴄᴛɪᴏɴ... ♡ღ**", ms, time.time()))                    
     except Exception as e:
         return await ms.edit(e)
              
