@@ -75,8 +75,8 @@ async def cb_handler(client, query: CallbackQuery):
                 ],[
                 InlineKeyboardButton("🧐 ʀᴇᴘᴏʀᴛ ᴀʙᴜꜱᴇ", url='https://t.me/IllegalDeveloperBot')
                 ],[
-                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
-                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+                InlineKeyboardButton("✗ Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("« Bᴀᴄᴋ", callback_data = "start")
             ]])            
         )
     elif data == "illegal":
@@ -85,12 +85,15 @@ async def cb_handler(client, query: CallbackQuery):
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
-                InlineKeyboardButton("≛ ᴏᴡɴᴇʀ", url="https://t.me/Illegal_Developer")
+                InlineKeyboardButton("ᴍᴏᴠɪᴇ ʙᴏᴛ¹", url="https://t.me/AnythingFilterBot"),
+                InlineKeyboardButton("ᴍᴏᴠɪᴇ ʙᴏᴛ²", url="https://t.me/iPopcornBeta_Bot")           
                 ],[
-                InlineKeyboardButton("🧐 ʀᴇᴘᴏʀᴛ ᴀʙᴜꜱᴇ", url="https://t.me/IllegalDeveloperBot")
+                InlineKeyboardButton("4ɢʙ ʀᴇɴᴀᴍᴇ ʙᴏᴛ", url="https://t.me/Illegal4GbRenameBot")
                 ],[
-                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
-                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+                InlineKeyboardButton("ꜰɪʟᴇ ꜱᴛᴏʀᴀɢᴇ ʙᴏᴛ", url="https://t.me/IllegalFileStorageBot")
+                ],[
+                InlineKeyboardButton("✗ Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("« Bᴀᴄᴋ", callback_data = "start")
             ]])            
         )
     elif data == "about":
@@ -99,12 +102,10 @@ async def cb_handler(client, query: CallbackQuery):
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
-                InlineKeyboardButton("≛ ᴏᴡɴᴇʀ", callback_data = "illegal")
+                InlineKeyboardButton("ᴏᴜʀ ʙᴏᴛꜱ", callback_data = "illegal")
                 ],[
-                InlineKeyboardButton("🧐 ʀᴇᴘᴏʀᴛ ᴀʙᴜꜱᴇ", url="https://t.me/IllegalDeveloperBot")
-                ],[
-                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
-                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+                InlineKeyboardButton("✗ Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("Developer", callback_data = "dev")
             ]])            
         )
     elif data == "dev":
@@ -117,8 +118,8 @@ async def cb_handler(client, query: CallbackQuery):
                 ],[
                 InlineKeyboardButton("🧐 ʀᴇᴘᴏʀᴛ ᴀʙᴜꜱᴇ", url="https://t.me/IllegalDeveloperBot")
                 ],[
-                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
-                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+                InlineKeyboardButton("✗ Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("« Bᴀᴄᴋ", callback_data = "start")
             ]])          
         )
     elif data == "close":
