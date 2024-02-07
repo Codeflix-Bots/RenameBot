@@ -79,13 +79,27 @@ async def cb_handler(client, query: CallbackQuery):
                 InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
             ]])            
         )
+    elif data == "illegal":
+        await query.message.edit_text(
+            text=Txt.ILLEGAL_TXT.format(client.mention),
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup([[
+                #⚠️ don't change source code & source link ⚠️ #
+                InlineKeyboardButton("≛ ᴏᴡɴᴇʀ", url="https://t.me/Illegal_Developer")
+                ],[
+                InlineKeyboardButton("🧐 ʀᴇᴘᴏʀᴛ ᴀʙᴜꜱᴇ", url="https://t.me/IllegalDeveloperBot")
+                ],[
+                InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
+                InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
+            ]])            
+        )
     elif data == "about":
         await query.message.edit_text(
             text=Txt.ABOUT_TXT.format(client.mention),
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
-                InlineKeyboardButton("≛ ᴏᴡɴᴇʀ", url="https://t.me/Illegal_Developer")
+                InlineKeyboardButton("≛ ᴏᴡɴᴇʀ", callback_data = "illegal")
                 ],[
                 InlineKeyboardButton("🧐 ʀᴇᴘᴏʀᴛ ᴀʙᴜꜱᴇ", url="https://t.me/IllegalDeveloperBot")
                 ],[
