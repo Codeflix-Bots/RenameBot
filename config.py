@@ -15,9 +15,9 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-Telegram Link : https://t.me/IllegalDeveloperBot
-Repo Link : https://github.com/IllegalDevelopers/ILLEGAL-RENAME-BOT
-License Link : https://github.com/IllegalDevelopers/ILLEGAL-RENAME-BOT/blob/main/LICENSE
+Telegram Link : https://t.me/codeflix_bots
+Repo Link : https://github.com/Codeflix-Bots/RenameBot
+License Link :https://github.com/Codeflix-Bots/RenameBot/blob/main/LICENSE
 """
 
 import re, os, time
@@ -60,8 +60,8 @@ class Txt(object):
     
     ABOUT_TXT = """<b>╭───────────⍟
 ├🤖 ᴍy ɴᴀᴍᴇ : {}
-├🖥️ Dᴇᴠᴇʟᴏᴩᴇʀꜱ : <a href=https://t.me/IllegalDeveloperBot>**ɪʟʟᴇɢᴀʟ ᴅᴇᴠᴇʟᴏᴘᴇʀ**</a> 🕷
-├👨‍💻 Pʀᴏɢʀᴀᴍᴇʀ : **ᴋᴜɴᴀʟ ꜱɪɴɢʜ**
+├🖥️ Dᴇᴠᴇʟᴏᴩᴇʀꜱ : <a href=https://t.me/codeflix_bots>**ᴄᴏᴅᴇғʟɪx ʙᴏᴛs**</a> 🕷
+├👨‍💻 Pʀᴏɢʀᴀᴍᴇʀ : **ᴍɪᴋᴇʏ**
 ╰───────────────⍟ </b>"""
 
     HELP_TXT = """
@@ -94,7 +94,7 @@ Exᴀᴍᴩʟᴇ:- /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 »**Kunal Singh ♡**"""
 
     PROGRESS_BAR = """<b>\n
-╭━━━━❰ɪʟʟᴇɢᴀʟ ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣
+╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣
 ┣⪼ 🗃️ Sɪᴢᴇ: {1} | {2}
 ┣⪼ ⏳️ Dᴏɴᴇ : {0}%
 ┣⪼ 🚀 Sᴩᴇᴇᴅ: {3}/s
