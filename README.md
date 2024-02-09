@@ -16,18 +16,19 @@
   - `API_HASH` - Your Telegram API HASH.
   - `TOKEN` - Get it from BotFather.
   - `ADMIN` - Your ID
-  - `STRING` - Only Need for 4gb Files.
   - `DB_URL` - Enter Mongodb database URL
   - `DB_NAME` - Enter Mongodb database URL Name
-  - `CHANNEL` - Force subscribe channel username without `@`
+  - `FORCE_SUB` - Force subscribe channel username without `@`
   - `LOG_CHANNEL` - Log Channel ID.
+  - `START_PIC` - Start Message Photo. You Don't Need This! Just Skip
+  - `WEBHOOK` -  If Your Server Is Need Web Service! Value = True Else Value = False
 
 ## - ᴄᴏᴍᴍᴀɴᴅs
 ```
 • /start - ᴛᴏ ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
-• /about - ᴛᴏ ᴄʜᴇᴄᴋ ʙᴏᴛ ᴅᴇᴛᴀɪʟꜱ
-• /viewthumb - ᴛᴏ ᴠɪᴇᴡ ʏᴏᴜʀ ᴛʜᴜᴍʙɴᴀɪʟ
-• /delthumb - ᴛᴏ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴛʜᴜᴍʙɴᴀɪʟ
+• /restart - To Rrstart The Bot (Admin Only)
+• /view_thumb - ᴛᴏ ᴠɪᴇᴡ ʏᴏᴜʀ ᴛʜᴜᴍʙɴᴀɪʟ
+• /del_thumb - ᴛᴏ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴛʜᴜᴍʙɴᴀɪʟ
 • /set_caption - ᴛᴏ ꜱᴇᴛ ᴄᴜꜱᴛᴏᴍ ᴄᴀᴘᴛɪᴏɴ
 • /del_caption - ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴄᴀᴘᴛɪᴏɴ
 • /see_caption - ᴛᴏ ᴄʜᴇᴄᴋ ᴄᴜʀʀᴇɴᴛ ᴄᴀᴘᴛɪᴏɴ
